@@ -26,6 +26,7 @@ int main(){
 	/*
 		Bit shift: Left Shift
 		The following operation perform a Left Shift Operation.
+		e.g: 011000 -> (<<2) = -0-11000(00) = 1100000
 	*/
 
 	i<<=4;
