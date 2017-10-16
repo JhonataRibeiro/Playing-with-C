@@ -19,6 +19,7 @@ int main(){
     }
     int poped = pop(st);
     printf("poped: %d", poped);
+    showStack();
     return 0;
 }
 
@@ -43,4 +44,16 @@ int pop(Stack st){
     printf("poped: position => %d , value: %d\n", st.top, st.itens[st.top]);
     st.top--;
     return item;
+}
+
+showStack(){
+    if(isEmpty(st)){
+        printf("stack is empty!");
+    }else{
+        for(int i=0; i<=20; i++){
+            printf(" -------------------------\n", st.itens[i], i);            
+            printf("| Index: %d | Valor: %d \n", st.itens[i], i);
+            printf(" -------------------------\n", st.itens[i], i);
+        }
+    }
 }
