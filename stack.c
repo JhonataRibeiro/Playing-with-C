@@ -1,20 +1,36 @@
 #include <stdio.h>
 #include <stdbool.h>
 #define STACKSIZE 100
+#define TRUE 1
+#define FALSE 0
 struct stack {
     int top;
-    int items[STACKSIZE];
+    int itens[STACKSIZE];
 };
 
-bool checkIfStackIsEmpty(int *stack);
+typedef struct stack Stack;
 
 int main(){
-    struct stack s;
-    checkIfStackIsEmpty(&s);
-    printf("stack %d \n", s);
+    Stack st;
+    st.top = -1;
+    isEmpty();
+    push(st,1);
     return 0;
 }
 
-// checkIfStackIsEmpty(int *stack){
-//     return 0;
-// }
+int isEmpty(Stack st){
+    printf("stack => top: %d\n", st.top);
+    if(st.top == -1){
+        return TRUE;
+    }else{
+        return FALSE;
+    } 
+}
+
+int push(Stack st, int item){
+    printf("%d",item);
+    st.top++;
+    st.itens[st.top] = item;
+    printf("stack position => %d , value: %d\n", st.top, st.itens[st.top]);
+    return 0;
+}
