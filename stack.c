@@ -9,12 +9,16 @@ struct stack {
 };
 
 typedef struct stack Stack;
+static Stack st;
 
 int main(){
-    Stack st;
     st.top = -1;
     isEmpty();
-    push(st,1);
+    for(int i=0; i<=10; i++){
+        push(i);
+    }
+    int poped = pop(st);
+    printf("poped: %d", poped);
     return 0;
 }
 
@@ -27,10 +31,16 @@ int isEmpty(Stack st){
     } 
 }
 
-int push(Stack st, int item){
-    printf("%d",item);
+int push(int item){
     st.top++;
     st.itens[st.top] = item;
     printf("stack position => %d , value: %d\n", st.top, st.itens[st.top]);
     return 0;
+}
+
+int pop(Stack st){
+    int item = st.itens[st.top];
+    printf("poped: position => %d , value: %d\n", st.top, st.itens[st.top]);
+    st.top--;
+    return item;
 }
